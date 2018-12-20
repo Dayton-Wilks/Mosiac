@@ -1,0 +1,215 @@
+html, body, div, p, h1, h2, h3, h4, span, a, input, ul, li{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+label:hover {
+    cursor: pointer;
+}
+
+html, body {
+    height: 100%;
+    position: relative;
+    background-color: #f3f3f3;
+}
+
+#stitching {
+    height: 100%;
+    position: relative;
+}
+
+.panel {
+    position: relative;
+    min-width: 200px;
+    width: 15%;
+    background: white;
+    color: black;
+    padding: 5px 10px;
+    display: flex;
+    flex-flow: column;
+}
+
+.cellInvalidData {
+    background-color: #FFCECE !important;
+}
+
+
+.preview {
+    width: 100%;
+    overflow: auto;
+}
+
+.stitch {
+    display: flex;
+    flex-flow: row nowrap;
+    position: relative;
+    height: 100%;
+}
+
+#stitchfiles {
+    display: none;
+}
+
+.stitchfileslabel {
+    color: #00BCFF;
+}
+
+.filecontrol {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    border-bottom: 0.5px solid rgb(138, 138, 138);
+}
+
+.filelist {
+    height: 150px;
+    width: 100%;
+    background-color: white;
+    color: inherit;
+    overflow: auto;
+    padding: 3px 5px;
+    position: relative;
+}
+
+.filenames {
+    overflow: auto;
+    white-space: nowrap;
+    margin-right: 20px;
+}
+
+.fileremove {
+    display: none;
+}
+
+.fileremove:hover {
+    cursor: pointer;
+}
+
+.fileopened:hover .fileremove{
+    display: inline-block;
+}
+
+.ht_clone_left .htCore td, .ht_clone_top_left_corner .htCore td, .ht_clone_top .htCore td {
+    background-color: #F0F0F0;
+}
+
+.fileopened {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.filteroptions {
+    display: flex;
+    flex-flow: column;
+}
+
+.filteroption {
+    margin-top: 8px;
+}
+
+.foptions {
+    user-select: none;
+    color: #00BCFF;
+}
+
+.stitchsavebtn:hover {
+    cursor: pointer;
+}
+
+.stitchsavebtn {
+    position: absolute;
+    width: 100%;
+    background: rgb(52, 134, 112);
+    border: none;
+    color: white;
+    padding: 10px 0;
+    bottom: 0;
+    left: 0;
+}
+
+.filter {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    margin-bottom: 33px;
+}
+
+.filterheader {
+    border-bottom: 0.5px solid rgb(138, 138, 138);
+    width: 100%;
+}
+
+.foptions {
+    padding: 3px 5px 3px 15px;
+    position: relative;
+    margin-left: 5px;
+}
+
+.s-filtercontainer {
+    height: 100px;
+    width: 100%;
+    border: 0.3px solid rgb(209, 208, 208);
+    margin-top: 5px;
+}
+
+.foptions::before {
+    content: "";
+    position: absolute;
+    top: 30%;
+    left: 0;
+    border-top: 5px solid transparent;
+    border-left: 5px solid black;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid transparent;
+    transition: transform 300ms ease;
+}
+
+.s-excluded-header input[type="text"] {
+    width: 100%;
+    padding: 3px 5px;
+    font-size: 12px;
+}
+
+.s-excluded-header {
+    overflow: hidden;
+    height: 135px;
+    transition: height 500ms ease;
+}
+
+.s-contains, .s-options  {
+    height: 30px;
+}
+
+.s-options {
+    margin: 3px 5px;
+}
+
+.filteroptions {
+    position: relative;
+}
+
+.s-options input[type='checkbox'] {
+    margin-right: 5px;
+}
+
+.s-excluded-header-hidden {
+    height: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.handsontableInputHolder {
+    z-index: 0;
+}
+
+.s-option-active::before {
+    transform: rotate(90deg);
+}
+
+.s-export::before {
+    display: none;
+}

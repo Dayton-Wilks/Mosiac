@@ -1,0 +1,38 @@
+
+  .MST.circle {
+    fill: lightgrey;
+    stroke: black;
+    stroke-width: .5px;
+  }
+
+  .MST.line {
+    stroke: green;
+    stroke-width: 3px
+  }
+
+  .MST.tipSpan{
+    font: normal 13px 'Lato', 'Open sans', sans-serif;
+    line-height: 1;
+    font-weight: bold;
+    background: #333333;
+    color: lightblue;
+    border-radius: 2px;
+  }
+
+  .MST.tip {
+    padding: 10px;
+    background-color: #333333;
+    position: absolute;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    display: none;
+  }
+  
+  .MST.label {
+    font: normal 10px 'Lato', 'Open sans', sans-serif;
+    font-weight: bold;
+    user-select: none;
+  }
+
+  .fixed {
+    fill: lightcoral !important;
+  }

@@ -1,0 +1,16 @@
+/*
+* The CSS for coloring the rows/tags/headers exist in src/style.css
+*/
+
+#tableBox {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.wtHolder {
+    width: 100%;
+    height: 100%;
+}
+
+/*.cellInvalidData class moved to src/style.css*/

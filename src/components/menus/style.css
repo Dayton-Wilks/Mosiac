@@ -1,0 +1,84 @@
+.frame {
+    -webkit-app-region: drag;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.f-options {
+    display: flex;
+    position: relative;
+    -webkit-app-region: no-drag;
+    user-select: none; 
+    margin: 0px;
+    padding: 0px;
+}
+.f-options * {
+    margin: 0px;
+    padding: 0px;
+}
+.f-option-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    width: 40px;
+    padding-top: 2px;
+    cursor: default;
+}
+.f-option-label:hover {
+    cursor: pointer;
+    background-color: rgb(167, 167, 167);
+}
+.f-option-dropdown {
+    position: absolute;
+    background: white;
+    z-index: 1000;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: 150px;
+}
+.f-hidden {
+    display: none;
+}
+.f-menubar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 100%;
+    background-color: lightgray;
+}
+.f-controls {
+    display: flex;
+    flex-flow: row nowrap;
+    position: relative;
+    -webkit-app-region: no-drag;
+}
+/* .f-control-icon {
+    color: white;
+    padding: 5px;
+} */
+.f-control-icon:hover {
+    cursor: pointer;
+}
+.f-icon {
+    float: right;
+    height: 25px;
+    -webkit-user-drag: none;
+}
+.f-menubar-end {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    width: 100%;
+}
+li {
+    list-style: none;
+}
+
+.f-menu-item {
+    height: 25px;
+    padding: 5px;
+}
+
+.f-menu-item:hover {
+    cursor: pointer;
+    background-color: rgb(214, 214, 214);
+}

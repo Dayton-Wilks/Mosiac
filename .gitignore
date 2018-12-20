@@ -1,0 +1,12 @@
+/node_modules/*
+/coverage/*
+/dist/*
+package-lock.json
+renderer.js
+vendors.js
+boxTest.js
+mult_view.json
+tsv.txt
+test\.js
+release-builds
+*.pyc

@@ -1,0 +1,147 @@
+body, html, div, span {
+    padding: 0;
+    margin: 0;
+}
+
+body, html {
+    height: 100%;
+    position: relative;
+    background: #FFFFFF;
+}
+
+#splash {
+    -webkit-app-region: drag;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+}
+
+#firstStrand {
+    margin-top: 15px;
+}
+
+.strand {
+    display: flex;
+    flex-flow: row nowrap;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    width: 50px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #00FFAE;
+    margin-right: 40px;
+    position: absolute;
+    left: 0;
+    transition: all 500ms ease;
+    z-index: 2;
+}
+
+.bond {
+    width: 50px;
+    height: 2px;
+    background: black;
+    position: absolute;
+    z-index: 1;
+}
+
+.dot2 {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    margin-left: 40px;
+    z-index: 2;
+    background: #00FFAE;
+}
+
+@keyframes dot {
+    0% {
+        width: 4px;
+        height: 4px;
+        z-index: 2;
+    }
+    25% {
+        width: 8px;
+        height: 8px;
+        margin-left: 20px;
+        z-index: 2;
+    }
+    50% {
+        width: 12px;
+        height: 12px;
+        margin-left: 40px;
+        z-index: 3;
+    }
+    75% {
+        width: 14px;
+        height: 14px;
+        margin-left: 20px;
+        z-index: 3;
+    }
+    100% {
+        width: 6px;
+        height: 6px;
+        margin-left: 0px;
+        z-index: 2;
+    }
+}
+
+@keyframes dot2 {
+    0% {
+        width: 12px;
+        height: 12px;
+        margin-left: 40px;
+        z-index: 3;
+    }
+    25% {
+        width: 14px;
+        height: 14px;
+        margin-left: 20px;
+        z-index: 3;
+    }
+    50% {
+        width: 4px;
+        height: 4px;
+        margin-left: 0px;
+        z-index: 2;
+    }
+    75% {
+        width: 8px;
+        height: 8px;
+        margin-left: 20px;
+        z-index: 2;
+    }
+    100% {
+        width: 12px;
+        height: 12px;
+        margin-left: 40px;
+        z-index: 3;
+    }
+}
+
+@keyframes bond {
+    0% {
+        width: 40px;
+    }
+    25% {
+        width: 20px;
+    }
+    50% {
+        width: 4px;
+    }
+    75% {
+        width: 20px;
+    }
+    100% {
+        width: 40px;
+    }
+}

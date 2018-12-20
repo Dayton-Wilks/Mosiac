@@ -1,0 +1,255 @@
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   if (this.props.tableData !== nextProps.tableData) 
+  //     this.props.setTable(Array.from(this.data));
+  //   console.log(nextProps !== this.props);
+  //    return nextProps.tableData !== this.props.tableData;
+  // }
+
+  // eventListener_BlurTargetOnEnter(event) {
+  //   if (event.which == 13) event.target.blur()
+  // }
+
+   // actionListener_editHeader(col, TH) {
+  //   //https://github.com/handsontable/handsontable/issues/1980
+  //   if (col == -1)  return;
+
+  //   var instance = this.refs.hot.hotInstance;
+  //   // create input element
+  //   var input = document.createElement('input');
+  //   input.type = 'text';
+  //   input.style = 'background:lightgrey'
+  //   input.value = TH.firstChild.textContent;
+
+  //   input.onchange = (e) => {
+  //     var headers = instance.getColHeader();
+  //     headers[col] = input.value;
+  //     instance.updateSettings({
+  //         colHeaders: headers
+  //     });
+  //   }
+  //   input.onkeypress = (e) => {
+  //     if (e.which === 13) input.blur();
+  //   }
+    
+  //   TH.appendChild(input);
+  //   TH.style.position = 'relative';
+  //   TH.firstChild.style.display = 'none';
+  // }
+
+  // actionListener_renderPageSizeBox_OnBlur(event) {
+  //   var newPageSizeComp = document.getElementById('pageSizeBox');
+  //   var newPageSize = parseInt(newPageSizeComp.value);
+  //   var pages;
+
+  //   if (isNaN(newPageSize) || newPageSize < 1 || newPageSize > 5000) {
+  //     newPageSizeComp.value = this.rowsPerPage;
+  //     return;
+  //   }
+
+  //   this.rowsPerPage = newPageSize
+  //   pages = this.calcTotalPages();
+  //   if (this.currentPageIndex > pages)
+  //     this.currentPageIndex = pages;
+
+  //   this.setCurrentPage(this.currentPageIndex);
+  // }
+
+  // actionListener_AfterCreateCol(index, amount, source) {
+  //   var newData = this.data.map((x) => {
+  //     var ret = x.slice(x, index);
+  //     for (let x = 0; x < amount; ++x)
+  //       ret.push('');
+  //     ret = ret.concat(x.slice(index + 1));
+  //     return ret;
+  //   })
+  //   this.data = newData;
+  //   //this.setCurrentPage(this.currentPageIndex);
+  // }  
+
+  // actionListener_AfterCreateRow(index, amount, source) {
+  //   var ind = index;
+  //   if (this.currentPageIndex > 1) 
+  //     ind += this.rowsPerPage * (this.currentPageIndex - 1);
+  //   var newData = this.data.slice(0, ind);
+  //   newData.push(Array(this.data[0].length).fill(''));
+  //   newData = newData.concat(this.data.slice(ind));
+  //   this.data = newData;
+  // }
+
+  // actionListener_AfterRemoveRow(index, amount, physicalRows, source) {
+  //    let rows = physicalRows.map((x) => { 
+  //     let y = x; 
+  //     if (this.currentPageIndex > 1) y += this.rowsPerPage * (this.currentPageIndex - 1);
+  //     return y;
+  //   })
+
+  //   var tab = [];
+
+  //   for (let y = 0; y < this.data.length; ++y) {
+  //     for (let z = 0; z < rows.length; ++z) {
+  //       if (y != rows[z]) {
+  //         tab.push(this.data[y]);
+  //         z = rows.length;
+  //       }
+  //     }
+  //   }
+  //   this.data = tab;
+  // }
+
+   // calcTotalPages() {
+  //   var pageCount = Math.floor((this.data.length - 2) / this.rowsPerPage);
+  //   if ((this.data.length - 2) % this.rowsPerPage !== 0) ++pageCount;
+
+  //   return pageCount;
+  // }
+
+  // getPage(newPageIndex) {
+  //   var pages = this.calcTotalPages();
+    
+  //   if (newPageIndex >= 1 && newPageIndex <= pages) {
+  //   var newPage = this.data.slice(0,2);
+
+  //   return newPage.concat( this.data.slice(
+  //     ((newPageIndex - 1) * this.rowsPerPage) + 2, 
+  //     (newPageIndex === pages) ? this.data.length : (newPageIndex * this.rowsPerPage) + 2)
+  //   )
+  // }
+
+  //   // if (newPageIndex >= 1 && newPageIndex <= pages) {
+  //   //   return this.data.slice(
+  //   //     (newPageIndex - 1) * this.rowsPerPage, 
+  //   //     (newPageIndex === pages) ? this.data.length : newPageIndex * this.rowsPerPage);
+  //   // }
+
+  //   return null;
+  // }
+
+  // setCurrentPage(newPageIndex) {
+  //   var page = this.getPage(newPageIndex);
+
+  //   if (page !== null) {
+  //     this.currentPageIndex = newPageIndex;
+  //     this.setState(state => ({workingData: page}));
+  //   }
+    
+  //   return null;
+  // }
+
+  // renderPageTab(pageNumber, text = pageNumber) {
+  //   if (this.currentPageIndex === pageNumber)
+  //     return (<button onClick={this.setCurrentPage.bind(null, pageNumber)} className={'currentPageButton'}>{text}</button>)
+  //   return (<button onClick={this.setCurrentPage.bind(null, pageNumber)}>{text}</button>);
+  // }
+
+  // renderPageTabs() {
+  //   const pages = this.calcTotalPages();
+  //   const tabsArray = [];
+
+  //   if (pages < 8) {
+  //     for (let i = 1; i <= pages; ++i) 
+  //     tabsArray.push(this.renderPageTab(i));
+  //   }
+  //   else {
+
+  //     if (this.currentPageIndex !== 1) {
+  //       tabsArray.push(this.renderPageTab(1, 'First'));
+  //       tabsArray.push(this.renderPageTab(this.currentPageIndex - 1, 'Previous'));
+  //     }
+
+  //     if (this.currentPageIndex < 4) {
+  //       for (let i = 1; i <= 7; ++i)
+  //         tabsArray.push(this.renderPageTab(i));
+  //     }
+  //     else if (this.currentPageIndex > pages - 3) {
+  //       for (let i = pages - 7; i <= pages; ++i) {
+  //         tabsArray.push(this.renderPageTab(i));
+  //       }
+  //     }
+  //     else {
+  //       for (let i = 3; i > 0; --i) {
+  //         tabsArray.push(this.renderPageTab(this.currentPageIndex - i));
+  //       }
+
+  //       tabsArray.push(this.renderPageTab(this.currentPageIndex));
+        
+  //       for (let i = 1; i < 4; ++i) {
+  //         tabsArray.push(this.renderPageTab(this.currentPageIndex + i));
+  //       }
+  //     }
+        
+  //     if (this.currentPageIndex !== pages) {
+  //       tabsArray.push(this.renderPageTab(this.currentPageIndex + 1, 'Next'));
+  //       tabsArray.push(this.renderPageTab(pages, 'Last'));
+  //     }
+  //   }
+
+  //   return tabsArray;
+  // }
+
+  // renderPageSizeBox() {
+  //   return (
+  //     <div>
+  //       <span>Page Size</span>
+  //       <input id={'pageSizeBox'} 
+  //       type='number' 
+  //       placeholder={this.rowsPerPage} 
+  //       min={10} max={1000} 
+  //       pattern={'\d+'} required 
+  //       onBlur={this.actionListener_renderPageSizeBox_OnBlur}/>
+  //     </div>
+  //   );
+  // }
+
+  // renderJumpToBox() {
+  //   return (
+  //     <div>
+  //       <span>Jump To: </span>
+  //       <input id={'jumpToBox'}
+  //       type='number'
+  //       placeholder={this.currentPageIndex}
+  //       min={0}
+  //       pattern={'\d+'} required
+  //       onBlur={() => {
+  //         var newPageElement = document.getElementById('jumpToBox');
+  //         var newPage = parseInt(newPageElement.value);
+          
+  //         if (isNaN(newPage) || newPage < 1 || newPage > this.calcTotalPages()) {
+  //           newPageElement.value = this.currentPageIndex;
+  //           return;
+  //         }
+
+  //         this.setCurrentPage(newPage);
+  //         }}>
+  //       </input>
+  //     </div>
+  //   );
+  // }
+
+  const defaults = {
+  tableID: 'hot',
+  state: {height: 800, width: 1200},
+  // data: [],
+  // rowsPerPage: 50,
+  // currentPageIndex: 1,
+  // state: {workingData: []},
+  timeOut: false,
+}
+
+componentDidMount() {
+    //this.setCurrentPage(1);
+
+    // // Listens for the enter key to signal end-editing
+    // document.getElementById('pageSizeBox')
+    // .addEventListener('keyup', this.eventListener_BlurTargetOnEnter);
+
+    // // Listens for the enter key to signal end-editing
+    // document.getElementById('jumpToBox')
+    // .addEventListener('keyup', this.eventListener_BlurTargetOnEnter);
+
+    // Listens to window and resizes table to fit.
+    electron.remote.getCurrentWindow()
+    .addListener('resize', this.eventListener_triggerUpdateTableSize);
+
+    this.eventListener_triggerUpdateTableSize(null);
+    // this.data = Array.from(this.props.tableData);
+  }

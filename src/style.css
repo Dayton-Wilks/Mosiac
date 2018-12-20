@@ -1,0 +1,103 @@
+html, body, #app {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+  
+body {
+    font-family: sans-serif;
+}
+
+/*Application Background Color*/
+#graphViewSideBar {
+    /* background-color: #206D59; - Origional Color*/
+    background-color: #ecfcfc;
+}
+
+.mosaicTabBar {
+    /* background-color: #206D59; - Origional Color*/
+    background-color: #206D59;
+}
+
+/*Colors even rows*/
+tbody tr:nth-of-type(even) td{
+    /* background-color: #ecfcfc */
+    background-color: #ecfcfc;
+}
+
+/*Colors Column Tabs/Headers*/
+tbody tr:nth-child(-n+2) td {
+    /* background-color: #ebebeb */
+    background-color: #ebebeb;
+}
+
+/*Colors Row Tabs/Headers*/
+tbody tr td:nth-child(-n+2) {
+    /* background-color: #ebebeb */
+    background-color: #ebebeb;
+}
+
+/*Tag Selector Background Color*/
+.tabSelectorTab {
+    /* background-color: whitesmoke; */
+    background-color: whitesmoke;
+}
+
+/*Page Tab Text Color*/
+.mosaicPageTab a {
+    /* color: #525352; */
+    color: #525352;
+}
+
+.pageTabCurrent {
+    background-color: white
+}
+
+.pageTabOther {
+    background-color: #A7AEAC;
+}
+
+.cellInvalidData {
+    background-color: #FFCECE !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Code for changing style programatically - NOT IN USE 
+function changeStyle(selectorText)
+{
+    var theRules = new Array();
+    if (document.styleSheets[0].cssRules) {
+        theRules = document.styleSheets[0].cssRules;
+    } 
+    else if (document.styleSheets[0].rules) {
+        theRules = document.styleSheets[0].rules;
+    }
+    for (n in theRules)
+    {
+        if (theRules[n].selectorText == selectorText)   {
+            theRules[n].style.color = 'blue';
+        }
+    }
+} 
+*/

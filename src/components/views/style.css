@@ -1,0 +1,161 @@
+/*************************************
+* index.js */
+#mosaicTableTab {
+    background-color: white;
+    color: #525352;
+}
+
+#mosaicGraphTab {
+    background-color: #A7AEAC;
+}
+
+#MosaicViewContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.mosaicTabBar {
+    height: 40px;
+    border-bottom: 2px black solid;
+    /*background-color: #206D59; - moved to src/style*/
+}
+
+.mosaicTabBar div {
+    user-select: none;
+    cursor: pointer;
+}
+
+.mosaicPageTab {
+    height: 40px;
+    width: 20%;
+    max-width: 250px;
+    border-radius: 10px 10px 0px 0px;
+    font-size: 180%;
+    text-align: center;
+    float: left;
+}
+
+.mosaicPageTab a {
+    height: 40px;
+    font-size: 100%;
+    text-align: center;
+    /*color: #525352; - Moved to src/style.css*/
+    line-height: 1.6em;
+    cursor: pointer;
+}
+
+/*************************************
+* TagSelector.js */
+#tagButtonList {
+    height: calc(100% - 296px);
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 275px;
+    left: 11px;
+    border: 2px black solid;
+    border-top: none;
+    border-radius: 0px 0px 5px 5px;
+    align-items: center;
+    background-color: whitesmoke;
+    overflow: auto;
+    z-index: 3;   
+}
+
+#tabSelectorRowButton {
+    left: 11px;
+}
+
+#tabSelectorColButton {
+    left: 143px
+}
+
+#tabSelectorDividerBar {
+    height: 2px;
+    position: absolute;
+    top: 275px;
+    border-radius: 10px;
+    background: black;
+    content: '';
+    z-index: 4;
+}
+
+.tagButton {
+    width: 160px;
+    border-radius: 10px;
+    border: 1px solid;
+    outline: none;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    height: 20px;
+    position: relative;
+}
+
+/*Background Color From src/style.css*/
+.tabSelectorTab { 
+    width: 92px;
+    height: 22px;
+    position: absolute;
+    top: 253px;
+    border-color: black;
+    border-width: 2px;
+    border-bottom: none; 
+    border-radius: 10px 10px 0px 0px;
+    outline: none;
+    font-size: 15px;
+}
+
+.visibilityImage {
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 12px;
+    -webkit-user-drag: none;
+}
+
+/*************************************
+* graphView.js */
+#graphViewWindowDiv {
+    height: calc(100% - 40px);
+}
+
+#graphViewSideBar {
+    height: 100%;
+    width: 250px;
+    box-sizing: border-box;
+    border-right: 2px black solid;
+    float: left;
+}
+
+#graphViewSideBar div {
+    user-select: none;
+}
+
+#graphViewVisualDiv {
+    height: 100%;
+    display: flex;
+    margin: 0px 1px 1px 1px;
+}
+
+#visualSelectionBox {
+    width: 100%;
+    height: 200px;
+    padding-top: 10px;
+}
+
+.visualSelectionButton {
+    margin: 6px 0px 3px 12%;
+    cursor: pointer;
+    -webkit-user-drag: none;
+}
+
+.notEnoughData {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}

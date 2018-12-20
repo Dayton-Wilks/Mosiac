@@ -1,0 +1,90 @@
+{
+  "name": "mosaic",
+  "productName": "Mosaic",
+  "version": "0.5.0",
+  "description": "Mosaic 3.0",
+  "private": true,
+  "main": "mosaic.js",
+  "scripts": {
+    "build": "npm run build-stitch && webpack -p",
+    "watch": "webpack -p --watch",
+    "start": "electron .",
+    "test": "npm run test-build && mocha --require ./src/tests/setup.js test",
+    "test-build": "webpack --config webpack.config.test.js",
+    "package-mac": "electron-packager . --asar --overwrite --platform=darwin --arch=x64 --prune=true --out=release-builds --ignore=src --ignore=tests --ignore=build-config --ignore=release-builds --ignore=webpack.config.js --ignore=package-lock.json",
+    "build-stitch": "webpack -p --config src/helper/stitching/src/stitching.config.js",
+    "package-win": "electron-packager . --overwrite --asar --platform=win32 --arch=ia32 --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Mosaic\" --ignore=src --ignore=tests --ignore=build-config --ignore=release-builds --ignore=webpack.config.js --ignore=package-lock.json",
+    "package-linux": "electron-packager . --overwrite --asar --platform=linux --arch x64 --prune=true --out=release-builds --ignore=src --ignore=tests --ignore=build-config --ignore=release-builds --ignore=webpack.config.js --ignore=package-lock.json",
+    "mac-dmg": "appdmg build-config/mac-dmg.json release-builds/mosaic-darwin-x64/Mosaic.dmg",
+    "mac": "npm run package-mac && npm run mac-dmg",
+    "linux": "npm run package-linux && npm run linux-installer",
+    "windows-installer": "electron-installer-windows --src release-builds/Mosaic-win32-ia32/ --dest release-builds/installers/",
+    "linux-installer": "electron-installer-debian --src release-builds/Mosaic-linux-x64 --dest release-builds/installers/ --arch amd64",
+    "windows": "npm run package-win && npm run windows-installer",
+    "spectron-test": "mocha src/tests/SpectronTests/spectronStarter.js --require src/tests/setup.js && mocha src/tests/SpectronTests/visualsLoadST.js --require src/tests/setup.js"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      "env"
+    ],
+    "plugins": [
+      "transform-object-rest-spread"
+    ]
+  },
+  "dependencies": {
+    "@handsontable/react": "^1.0.0",
+    "array2d": "0.0.5",
+    "d3": "4.10.2",
+    "electron-installer-windows": "^1.1.0",
+    "event-stream": "^3.3.4",
+    "handsontable": "^5.0.0",
+    "papaparse": "^4.3.6",
+    "prop-types": "15.5.10",
+    "react": "^16.4.2",
+    "react-addons-perf": "15.4.2",
+    "react-chord-diagram": "1.0.4",
+    "react-contextmenu": "2.7.0",
+    "react-dom": "^16.4.2",
+    "react-iframe": "1.0.7",
+    "react-perf-tool": "0.2.2",
+    "react-redux": "5.0.6",
+    "react-router-dom": "^4.3.1",
+    "underscore": "1.8.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^23.4.2",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "electron": "^2.0.5",
+    "electron-devtools-installer": "^2.2.4",
+    "electron-packager": "^12.1.0",
+    "electron-reload": "^1.2.5",
+    "jest": "^23.5.0",
+    "node-gyp": "^3.7.0",
+    "prim-mst": "^1.1.0",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
+    "spectron": "^3.8.0",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.1.0"
+  },
+  "author": "Jiawei Xu, Morgan Loring, Dayton Wilks, Paul Wyatt , Isaac Harries, Rusty Raymond, Lake Sain-Thomason",
+  "license": "MIT",
+  "repository": "",
+  "optionalDependencies": {
+    "appdmg": "^0.5.2",
+    "chai": "^4.1.2",
+    "electron-installer-debian": "^0.8.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jsdom": "^11.12.0",
+    "mocha": "^5.2.0"
+  }
+}

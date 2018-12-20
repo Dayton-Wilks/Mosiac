@@ -1,0 +1,33 @@
+#clusterGrammerButton {
+    height: 20px;
+}
+
+#simpleHeatMap {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    position: relative;
+}
+
+.heatmap, .clustergrammer {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.loading, .invalid, .installing {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.clustergrammerFrame {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
